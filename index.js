@@ -50,3 +50,13 @@
 // else (
 //     alert("Crazy Day")
 // )
+
+
+
+// var now = new Date().getDate();
+// if (now<16){
+//     alert("First Fifteen Days Of The Month")
+// }
+// else{
+//     alert("Last Days Of The Month")
+// }
