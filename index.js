@@ -2,3 +2,11 @@
 // var now = new Date().getFullYear();
 // var diff =now - age;
 // console.log("Your Birth Year is =>",diff)
+// var age = Number(prompt("Enter your age"));
+// var currentYear = new Date().getFullYear();
+// var birthYear = currentYear - age;
+// var birthDate = new Date(birthYear,0,2);
+// var cyear=new Date();
+// console.log("current date:",cyear);
+// console.log("100 years back,", birthDate);
+
