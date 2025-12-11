@@ -33,3 +33,20 @@
 // document.write(`Today is ${copy} `)
 
 
+// const weeks = [
+//     "Sunday",
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday"
+// ];
+// var now = new Date().getDay();
+// console.log(now)
+// if( (weeks[now] ==  "Thursday") || (weeks == "Sunday")){
+//     alert("it's funny Day")
+// }
+// else (
+//     alert("Crazy Day")
+// )
