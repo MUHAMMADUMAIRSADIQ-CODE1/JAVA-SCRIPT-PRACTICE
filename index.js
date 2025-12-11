@@ -28,3 +28,8 @@
 // var now =new Date ().getMonth();
 // document.write("CURRENT MONTH IS"+" " + months[now])
 
+// var now = new Date().toString()
+// var copy=now.slice(0,4)
+// document.write(`Today is ${copy} `)
+
+
