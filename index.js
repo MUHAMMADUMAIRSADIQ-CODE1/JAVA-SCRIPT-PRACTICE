@@ -60,3 +60,47 @@
 // else{
 //     alert("Last Days Of The Month")
 // }
+// const fruits = ["banana", "green apple", "red apple", "red mango"];
+// let s="mera red apple"
+// console.log(fruits.find(word=>s.includes(word)))
+
+// const numbers = [3, 7, 10, 15];
+
+// const result = numbers.some(num => num > 8);
+
+// console.log(result);
+
+
+
+// const fruits = ["apple", "banana", "mango"];
+
+// fruits.forEach(fruit => {
+//   console.log(fruit);
+// });
+
+
+// const nums = [1, 2, 3, 4];
+// nums.forEach(num =>console.log (num));
+
+// const nums = [2, 4, 6];
+// // 👉 map use karo
+// // har number ko square kar
+// console.log(nums.map(sq=>sq*sq))
+
+
+// const nums = [5, 10, 15, 20];
+// // 👉 sirf 10 se baray numbers nikaalo
+// console.log(nums.filter(sq=>sq>10))
+
+
+// 👉 check karo kya koi naam “Sara” hai
+// const names = ["Ali", "Ahmed", "Sara"];
+// console.log(names.some(some=>some==="Sara"))
+
+
+// const fruits = ["banana", "apple", "mango"];
+// // 👉 pehla fruit nikaalo jisme "an" ho
+// console.log(fruits.map(an=>an.includes("an")))
+// console.log(fruits.filter(an=>an.includes("an")))
+// console.log(fruits.find(an=>an.includes("an")))
+// console.log(fruits.some(an=>an.includes("an")))
