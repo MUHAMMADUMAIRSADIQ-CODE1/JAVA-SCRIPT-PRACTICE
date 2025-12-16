@@ -172,3 +172,9 @@
 // const nums = [3, 7, 9, 12];
 // // 👉 check karo kya koi number 10 se bara hai?
 // console.log(nums.some(num=>num>10))
+
+
+// 👉 check karo kya sab numbers positive hain?
+
+const nums = [2, 5, 7, 1];
+console.log(nums.every(num=>num>=0))
