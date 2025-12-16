@@ -104,3 +104,59 @@
 // console.log(fruits.filter(an=>an.includes("an")))
 // console.log(fruits.find(an=>an.includes("an")))
 // console.log(fruits.some(an=>an.includes("an")))
+// const fruits = ["banana", "apple", "mango", "orange"];
+// // 🟢 Q1 — map
+
+// // 👉 har fruit ke length ka naya array banao
+// let a=[];
+// console.log(fruits.map(mein=>a.map(mein.length)
+    
+// ))
+
+
+// let word = "apple";
+
+// for (let ch of word) {
+//   console.log(ch);
+// }
+
+
+// let word = "apple";
+
+// let chars = word.split("");
+// console.log(chars);
+// // ["a", "p", "p", "l", "e"]
+
+// let lengths = chars.map(ch => ch);
+// // console.log(lengths)
+
+
+// const fruits = ["banana", "apple", "mango"];
+// let a=fruits.map(an=>an)
+// console.log(a)
+// console.log(fruits)
+
+// let text = "apple mango banana";
+
+// let arr = text.split(" ");
+
+// console.log(arr);
+// console.log(arr.join(" "));
+
+
+
+// 1️⃣ words ka array banao
+// 2️⃣ har word uppercase karo
+// 3️⃣ wapas sentence banao
+
+// let sen="mein umair hoon"
+// console.log(sen)
+// let arr =sen.split(" ")
+// console.log(arr)
+// let result=arr.map(upp=>upp.toUpperCase())
+// console.log(result)
+// let lastresult=result.join(" ");
+// console.log(lastresult)
+
+
+
