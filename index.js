@@ -159,4 +159,15 @@
 // console.log(lastresult)
 
 
+// const nums = [1, 2, 3, 4];
+// console.log(nums.map(nums=>nums*2))
 
+
+// const nums = [1, 2, 3, 4, 5, 6];
+// // 👉 sirf even numbers rakho
+
+// console.log(nums.filter(num=>num%2===0))
+
+
+const nums = [3, 7, 9, 12];
+// 👉 check karo kya koi number 10 se bara hai?
