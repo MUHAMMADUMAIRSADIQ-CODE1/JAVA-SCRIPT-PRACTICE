@@ -169,5 +169,6 @@
 // console.log(nums.filter(num=>num%2===0))
 
 
-const nums = [3, 7, 9, 12];
-// 👉 check karo kya koi number 10 se bara hai?
+// const nums = [3, 7, 9, 12];
+// // 👉 check karo kya koi number 10 se bara hai?
+// console.log(nums.some(num=>num>10))
