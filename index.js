@@ -187,6 +187,45 @@
 
 // console.log(result);
 // // undefined
+  
+
+
+
+// const input = document.getElementById("search");
+// const list = document.getElementById("list");
+
+// const fruits = [
+//     "Apple",
+//     "Banana",
+//     "Orange",
+//     "Mango",
+//     "Grapes",
+//     "Pineapple"
+// ];
+
+// function showItems(items) {
+//     list.innerHTML = "";
+
+//     items.map(item => {
+//         let li = document.createElement("li");
+//         li.innerText = item;
+//         li.style.listStyleType="circle";
+//         list.appendChild(li);
+//     });
+// }
+
+// //
+// // showItems(fruits);
+
+// input.addEventListener("input", () => {
+//     let value = input.value.toLowerCase();
+
+//     let filtered = fruits.filter(fruit =>
+//         fruit.toLowerCase().includes(value)
+//     );
+
+//     showItems(filtered);
+// });
 
 
 
