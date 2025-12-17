@@ -164,7 +164,7 @@
 
 
 // const nums = [1, 2, 3, 4, 5, 6];
-// // 👉 sirf even numbers rakho
+// // // 👉 sirf even numbers rakho
 
 // console.log(nums.filter(num=>num%2===0))
 
@@ -176,5 +176,18 @@
 
 // 👉 check karo kya sab numbers positive hain?
 
-const nums = [2, 5, 7, 1];
-console.log(nums.every(num=>num>=0))
+// const nums = [2, 5, 7, 1];
+// console.log(nums.every(num=>num>=0))
+
+// const nums = [1,2,3];
+
+// const result = nums.forEach(n => {
+//   console.log(n * 2);
+// });
+
+// console.log(result);
+// // undefined
+
+
+
+
