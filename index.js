@@ -110,7 +110,7 @@
 // // 👉 har fruit ke length ka naya array banao
 // let a=[];
 // console.log(fruits.map(mein=>a.map(mein.length)
-    
+
 // ))
 
 
@@ -187,7 +187,7 @@
 
 // console.log(result);
 // // undefined
-  
+
 
 
 
@@ -227,6 +227,62 @@
 //     showItems(filtered);
 // });
 
+// let todos = [];
+
+// function addTodo() {
+//     let input = document.getElementById("todoInput");
+//     let text = input.value.trim();   // 👈 trim yahan use ho raha hai
+
+//     if (text === "") return;
+
+//     let todo = {
+//         text: text,
+//         done: false
+//     };
+
+//     todos.push(todo);
+//     input.value = "";
+//     renderTodos();
+// }
+
+// function toggleTodo(index) {
+//     todos[index].done = !todos[index].done;
+//     renderTodos();
+// }
+
+// function renderTodos() {
+//     let list = document.getElementById("todoList");
+//     list.innerHTML = "";
+
+//     todos.map((todo, index) => {
+//         let li = document.createElement("li");
+//         li.innerText = todo.text;
+
+//         if (todo.done) {
+//             li.classList.add("done");
+//         }
+
+//         li.onclick = () => toggleTodo(index);
+//         list.appendChild(li);
+//     });
+// }
+
+// let a = document.querySelector("a");
+
+
+// console.dir(a.href)
+
+// let li = document.querySelectorAll("li");
+// li.forEach((item, index) =>{if (index % 2 == 0) {
+// item.classList.add("highlight")
+// }})
+// let li =document.querySelectorAll("ul li")
+// console.dir(li)
+
+
+
+// let input =document.querySelector("input");
+// input.addEventListener("input",ev=>console.log(ev.data))
 
 
 
