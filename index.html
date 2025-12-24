@@ -53,6 +53,31 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    body{
+        background-color: beige;
+        overflow-x: hidden;
+    }
+    #main{
+      height: 100vh; 
+      width: 100vw; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    input{
+        display:none;
+    }
+    button{
+        padding: 10px 10px;
+        outline: none;
+        border: 2px solid blue;
+        background-color: antiquewhite;
+        border-radius: 5px;
+     
+    }
+</style>
 <body>
     <!-- <p class="value">umair hoon</p> -->
      <!-- <a href="https://www.google.com"></a> -->
@@ -67,7 +92,21 @@
         <li>apple</li>
      </ul> -->
 
-     <input type="text">
+     <!-- <input type="text"> -->
+
+     <!-- <select>
+        <option value="u" selected disabled>umair</option>
+        <option value="d">umair2</option>
+        <option value="f">umair3</option>
+        <option value="g">umair4</option>
+     </select> -->
+
+<div id="main">
+    <input type="file"><br>
+    <p></p>
+    <button>Upload File</button>
+</div>
+
     <script src="index.js"></script>
 </body>
 </html>

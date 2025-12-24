@@ -282,7 +282,48 @@
 
 
 // let input =document.querySelector("input");
-// input.addEventListener("input",ev=>console.log(ev.data))
+// input.addEventListener("input",ev=>{
+//     if(ev.data!==null && ev.data !==" "){
+//      console.log(ev.data)
+//     }
+
+// })
+
+
+// let sel = document.querySelector("select")
+
+// sel.addEventListener("change",e=>{console.log(
+//     e
+// )})
+
+// let div = document.querySelector("div");
+// let h1 = document.querySelector("h1")
+// window.addEventListener("keydown", e => {
+
+//     if (e.key === " ") {
+//         h1.textContent = `SPC`
+//     }
+//     else {
+//         h1.textContent = e.key
+//     }
+// })
 
 
 
+let p =document.querySelector("p")
+let input = document.querySelector("input");
+let button = document.querySelector("button");
+button.addEventListener("click",()=>{
+input.click();
+// console.dir(input)
+})
+  
+input.addEventListener("change",(e)=>{
+    let file=e.target.files[0]
+    console.log(file)
+   if(file){
+     button.innerText=file.name
+   }
+    
+})
+// e.target.files[0].name
