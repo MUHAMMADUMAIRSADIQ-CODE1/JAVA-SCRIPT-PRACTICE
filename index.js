@@ -310,20 +310,51 @@
 
 
 
-let p =document.querySelector("p")
-let input = document.querySelector("input");
-let button = document.querySelector("button");
-button.addEventListener("click",()=>{
-input.click();
-// console.dir(input)
-})
-  
-input.addEventListener("change",(e)=>{
-    let file=e.target.files[0]
-    console.log(file)
-   if(file){
-     button.innerText=file.name
-   }
-    
-})
-// e.target.files[0].name
+// let p =document.querySelector("p")
+// let input = document.querySelector("input");
+// let button = document.querySelector("button");
+// button.addEventListener("click",()=>{
+// input.click();
+// // console.dir(input)
+// })
+
+// input.addEventListener("change",(e)=>{
+//     let file=e.target.files[0]
+//     console.log(file)
+//    if(file){
+//      button.innerText=file.name
+//    }
+
+// })
+// // e.target.files[0].name
+
+
+// let ul = document.querySelector("ul");
+// ul.addEventListener("click",(e)=>{
+// e.target.classList.toggle("lin") 
+// })
+// let span = document.querySelector("span")
+// let inp = document.querySelector("input");
+// inp.addEventListener("input", e => {
+//   if (inp.value.length <= 20) {
+//     span.textContent = `${inp.value.length}`
+//   }
+//   else {
+//     inp.value=" "
+//   }
+// })
+// let span = document.querySelector("span");
+// let inp = document.querySelector("input");
+// let max = 20;
+
+// inp.addEventListener("input", () => {
+//   if (inp.value.length > max) {
+//     inp.value = inp.value.slice(0, max);
+//     console.log(inp.value)
+//   }
+//   span.textContent = inp.value.length;
+// });
+// let input = document.querySelector("input");
+// input.addEventListener("input",()=>{
+// console.dir(input.value)
+// })
