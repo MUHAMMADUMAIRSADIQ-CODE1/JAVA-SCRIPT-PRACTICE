@@ -1,3 +1,352 @@
-.highlight{
+/* .highlight{
     color: red;
+}
+.d{
+    display: none;
+}
+.e{
+color: green;
+}
+.f{
+color: red;
+}
+.um{
+    border: 2px solid rgb(136, 14, 14);
+    width: 100%;
+    height: 90vh;
+}
+.u{
+    background-color: blue;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center;
+}
+li{
+    list-style-type: none;
+}
+.add{
+    text-decoration: line-through;
+/* } */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+/* App Card */
+.app {
+  background: #fff;
+  width: 360px;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.app h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Input section */
+.input-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #667eea;
+}
+
+.input-box button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #667eea;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-box button:hover {
+  background: #5563d6;
+  transform: translateY(-2px);
+}
+
+/* Todo list */
+ul {
+  list-style: none;
+}
+
+li {
+  background: #f3f4f6;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slide 0.3s ease;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Todo text */
+.text {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.text.add {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Delete button */
+.del {
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.del:hover {
+  background: #e63b3b;
+  transform: scale(1.05);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* App Card */
+.app {
+  background: #fff;
+  width: 360px;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.app h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Input section */
+.input-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-box input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #667eea;
+}
+
+.input-box button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #667eea;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-box button:hover {
+  background: #5563d6;
+  transform: translateY(-2px);
+}
+
+/* Todo list */
+ul {
+  list-style: none;
+}
+
+li {
+  background: #f3f4f6;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slide 0.3s ease;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Todo text */
+.text {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.text.add {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Delete button */
+.del {
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.del:hover {
+  background: #e63b3b;
+  transform: scale(1.05);
+}
+/* Todo list item */
+li {
+  background: #f3f4f6;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer; /* ✅ pointer */
+
+  animation: slide 0.3s ease;
+  transition: 0.3s ease; /* ✅ smooth hover */
+}
+
+/* Hover effect on list */
+li:hover {
+  background: #e8ebf0;
+  transform: translateY(-2px); /* 🔥 lift effect */
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Active / click feel */
+li:active {
+  transform: scale(0.97);
+}
+
+/* Text animation */
+.text {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Completed todo */
+.text.add {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Delete button stays normal */
+.del {
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.del:hover {
+  background: #e63b3b;
+  transform: scale(1.08);
 }

@@ -358,3 +358,217 @@
 // input.addEventListener("input",()=>{
 // console.dir(input.value)
 // })
+
+// let a = 0;
+
+// let btn1 = document.querySelector("#btn1"); // +
+// let btn2 = document.querySelector("#btn2"); // -
+// let h1 = document.createElement("h1");
+// let c;
+// h1.textContent = a;
+// document.body.appendChild(h1);
+
+// btn1.addEventListener("click", () => {
+//   a++;
+//   h1.textContent = a;
+//   c=a
+//   if(c%2==0){
+//     h1.classList.add("e")
+//     h1.classList.remove("f")
+// }
+// else{
+//     h1.classList.add("f")
+//     h1.classList.remove("e")
+// }
+
+// });
+
+// btn2.addEventListener("click", () => {
+//   if (a > 0) {
+//     a--;
+//     h1.textContent = a;
+//     c=a
+//     // console.log(c)
+//   }
+//  if(c%2==0){
+//     h1.classList.add("e")
+//     h1.classList.remove("f")
+// }
+// else{
+//     h1.classList.add("f")
+//     h1.classList.remove("e")
+// }
+
+// });
+// console.log(c)
+
+
+// let button =document.querySelector("button");
+// let h1=document.querySelector("h1");
+// console.dir(h1);
+// button.addEventListener("click",()=>{
+// h1.classList.toggle("d")
+// })
+
+
+
+// let a = 0;
+
+// let btn1 = document.querySelector("#btn1");
+// let btn2 = document.querySelector("#btn2");
+// let h1 = document.createElement("h1");
+
+// document.body.appendChild(h1);
+
+// function updateUI() {
+//     console.log(a)
+//   h1.textContent = a;
+
+//   if (a % 2 === 0) {
+//     h1.classList.add("e");
+//     h1.classList.remove("f");
+//   } else {
+//     h1.classList.add("f");
+//     h1.classList.remove("e");
+//   }
+// }
+
+// updateUI();
+
+// btn1.addEventListener("click", () => {
+//   a++;
+//   updateUI();
+// });
+
+// btn2.addEventListener("click", () => {
+//   if (a >1) {
+//     a--;
+//     updateUI();
+//   }
+// });
+
+
+
+
+// let div =document.querySelector("div");
+// div.className="u"
+// console.dir(div.classList.add("um"))
+// console.dir(div.classList.add("u"))
+// // div.setAttribute("id", "box1",);
+// // div.id="hsj"
+// // div.className="u"
+// // div.className="um"
+
+
+
+
+// 🧠 Logic Rules (VERY IMPORTANT)
+
+// 1️⃣ Start
+
+// counter har 1 second mein +1 ho
+
+// agar pehle se chal raha ho → dobara start na ho
+
+// 2️⃣ Stop
+
+// counter ruk jaye
+
+// value wahi rahe
+
+// 3️⃣ Reset
+
+// counter = 0
+
+// color update ho (even / odd logic reuse karo)
+
+
+// let count =0;
+// let a=null;
+// let h1 =document.querySelector("h1");
+// let btn1=document.querySelector(".btn1")
+// // let btn2=document.querySelector(".btn2")
+// function plus(){
+// count++;
+// h1.textContent=count;
+// }
+// btn1.addEventListener("click",()=>{
+// if(a===null){
+// plus()
+//  a=setInterval(plus,100);
+//  console.log(a)
+// btn1.textContent=`Stop`
+// }
+// else{
+//    clearInterval(a)
+//    btn1.textContent=`Start`
+//   a=null
+// }
+// })
+
+
+let button = document.querySelector("button");
+let input = document.querySelector("input");
+let ul = document.querySelector("ul");
+
+
+function todos() {
+  localStorage.setItem("todos", ul.innerHTML);
+}
+
+
+let savedTodos = localStorage.getItem("todos");
+if (savedTodos) {
+  ul.innerHTML = savedTodos;
+}
+
+
+function addLi() {
+  let li = document.createElement("li");
+  li.innerHTML = `
+    <span class="text">${input.value}</span>
+    <button class="del">Delete</button>
+  `;
+  ul.appendChild(li);
+}
+
+
+function clearInput() {
+  input.value = "";
+}
+
+
+ul.addEventListener("click", (e) => {
+
+
+  if (e.target.classList.contains("text")) {
+    e.target.classList.toggle("add");
+    todos();
+  }
+
+  
+  if (e.target.classList.contains("del")) {
+    let li = e.target.closest("li");
+    let text = document.querySelector(".text");
+
+    if (text.classList.contains("add")) {
+      let ok = confirm("Are you sure");
+      if (ok) li.remove();
+    } else {
+      li.remove();
+    }
+
+    todos();
+  }
+});
+
+
+button.addEventListener("click", () => {
+  if (input.value) {
+    addLi();
+    clearInput();
+    todos();
+  }
+});
+
+
