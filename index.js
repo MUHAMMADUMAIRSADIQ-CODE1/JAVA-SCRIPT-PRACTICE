@@ -507,68 +507,187 @@
 // })
 
 
-let button = document.querySelector("button");
-let input = document.querySelector("input");
-let ul = document.querySelector("ul");
+// let button = document.querySelector("button");
+// let input = document.querySelector("input");
+// let ul = document.querySelector("ul");
 
 
-function todos() {
-  localStorage.setItem("todos", ul.innerHTML);
-}
+// function todos() {
+//   localStorage.setItem("todos", ul.innerHTML);
+// }
 
 
-let savedTodos = localStorage.getItem("todos");
-if (savedTodos) {
-  ul.innerHTML = savedTodos;
-}
+// let savedTodos = localStorage.getItem("todos");
+// if (savedTodos) {
+//   ul.innerHTML = savedTodos;
+// }
 
 
-function addLi() {
-  let li = document.createElement("li");
-  li.innerHTML = `
-    <span class="text">${input.value}</span>
-    <button class="del">Delete</button>
-  `;
-  ul.appendChild(li);
-}
+// function addLi() {
+//   let li = document.createElement("li");
+//   li.innerHTML = `
+//     <span class="text">${input.value}</span>
+//     <button class="del">Delete</button>
+//   `;
+//   ul.appendChild(li);
+// }
 
 
-function clearInput() {
-  input.value = "";
-}
+// function clearInput() {
+//   input.value = "";
+// }
 
 
-ul.addEventListener("click", (e) => {
+// ul.addEventListener("click", (e) => {
 
 
-  if (e.target.classList.contains("text")) {
-    e.target.classList.toggle("add");
-    todos();
-  }
+//   if (e.target.classList.contains("text")) {
+//     e.target.classList.toggle("add");
+//     todos();
+//   }
 
-  
-  if (e.target.classList.contains("del")) {
-    let li = e.target.closest("li");
-    let text = document.querySelector(".text");
 
-    if (text.classList.contains("add")) {
-      let ok = confirm("Are you sure");
-      if (ok) li.remove();
-    } else {
-      li.remove();
+//   if (e.target.classList.contains("del")) {
+//     let li = e.target.closest("li");
+//     let text = document.querySelector(".text");
+
+//     if (text.classList.contains("add")) {
+//       let ok = confirm("Are you sure");
+//       if (ok) li.remove();
+//     } else {
+//       li.remove();
+//     }
+
+//     todos();
+//   }
+// });
+
+
+// button.addEventListener("click", () => {
+//   if (input.value) {
+//     addLi();
+//     clearInput();
+//     todos();
+//   }
+// });
+
+
+
+
+
+// second project:
+
+// 🎯 Goal:
+
+// Screen par number show ho
+
+// + button se number increase ho
+
+// - button se decrease ho
+
+// number 0 se neeche na jaye
+let SelectedOpt = null;
+let isvalid = false;
+let sum = 0
+let p = document.querySelector("p");
+let btn = document.querySelector("button")
+let count = 0;
+let quiz = [
+    {
+        question: "1) JavaScript kis cheez ke liye use hoti hai?",
+        options: ["Styling", "Structure", "Logic", "Design"],
+        correct: "Logic"
+    },
+    {
+        question: "2) HTML ka full form kya hai?",
+        options: [
+            "Hyper Text Markup Language",
+            "High Text Machine Language",
+            "Hyper Tool Mark Language",
+            "Home Text Mark Language"
+        ],
+        correct: "Hyper Text Markup Language"
+    },
+    {
+        question: "3) CSS kis cheez ke liye use hoti hai?",
+        options: ["Logic", "Database", "Styling", "Server"],
+        correct: "Styling"
+    },
+    {
+        question: "4) JavaScript mein array ka index kis se start hota hai?",
+        options: ["0", "1", "-1", "2"],
+        correct: "0"
+    },
+    {
+        question: "5) DOM ka full form kya hai?",
+        options: [
+            "Document Object Model",
+            "Data Object Method",
+            "Document Oriented Model",
+            "Digital Object Model"
+        ],
+        correct: "Document Object Model"
+    },
+    {
+        question: "6) JavaScript mein function ka keyword kya hota hai?",
+        options: ["func", "function", "method", "define"],
+        correct: "function"
+    },
+    {
+        question: "7) CSS file ko HTML ke saath kaise link karte hain?",
+        options: ["<script>", "<style>", "<css>", "<link>"],
+        correct: "<link>"
+    },
+    {
+        question: "8) JavaScript mein variable declare karne ke liye kaunsa keyword use hota hai?",
+        options: ["int", "var", "string", "value"],
+        correct: "var"
+    },
+    {
+        question: "9) Kaunsa symbol JavaScript mein single-line comment ke liye use hota hai?",
+        options: ["<!-- -->", "/* */", "//", "**"],
+        correct: "//"
+    },
+    {
+        question: "10) JavaScript mein condition check karne ke liye kaunsa statement use hota hai?",
+        options: ["for", "if", "switch", "while"],
+        correct: "if"
     }
 
-    todos();
-  }
-});
+];
 
+function update() {
+    SelectedOpt = null
+    p.innerHTML = " "
+    if (quiz.length - 1 < count) {
+        alert(`Your Score is ${sum}`)
+        alert("Quiz is completed")
+        count = 0
+        sum = 0
+    }
+    let a = quiz[count].question
+    p.innerHTML += `<h1>${a}</h1><br>`;
 
-button.addEventListener("click", () => {
-  if (input.value) {
-    addLi();
-    clearInput();
-    todos();
-  }
-});
-
-
+    quiz[count].options.forEach(e => {
+        let label = document.createElement("label");
+        let input = document.createElement("input")
+        input.value = e;
+        input.type = "radio"
+        input.name = "option"
+        label.append(input, " " + e);
+        p.appendChild(label);
+        p.appendChild(document.createElement("br"))
+    });
+}
+p.addEventListener("click", e => {
+    SelectedOpt = e.target.value;
+})
+btn.addEventListener("click", () => {
+    if (SelectedOpt === null) return alert("please choose")
+    if (SelectedOpt === quiz[count].correct) {
+        sum++;
+    }
+    count++;
+    update();
+})
+update();

@@ -33,320 +33,100 @@ li{
     text-decoration: line-through;
 /* } */
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  outline: none;
-}
-
-/* App Card */
-.app {
-  background: #fff;
-  width: 360px;
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  animation: pop 0.4s ease;
-}
-
-@keyframes pop {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.app h1 {
-  text-align: center;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-/* Input section */
-.input-box {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.input-box input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  outline: none;
-  transition: 0.3s;
-}
-
-.input-box input:focus {
-  border-color: #667eea;
-}
-
-.input-box button {
-  padding: 10px 14px;
-  border: none;
-  border-radius: 8px;
-  background: #667eea;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.input-box button:hover {
-  background: #5563d6;
-  transform: translateY(-2px);
-}
-
-/* Todo list */
-ul {
-  list-style: none;
-}
-
-li {
-  background: #f3f4f6;
-  margin-bottom: 8px;
-  padding: 10px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  animation: slide 0.3s ease;
-}
-
-@keyframes slide {
-  from {
-    transform: translateX(-10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Todo text */
-.text {
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.text.add {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-/* Delete button */
-.del {
-  background: #ff4d4d;
-  border: none;
-  color: white;
-  padding: 5px 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.del:hover {
-  background: #e63b3b;
-  transform: scale(1.05);
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
-
-body {
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(135deg, #667eea, #764ba2);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* App Card */
-.app {
+.quiz-container {
   background: #fff;
-  width: 360px;
-  padding: 20px;
-  border-radius: 14px;
+  width: 420px;
+  padding: 25px;
+  border-radius: 15px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  animation: pop 0.4s ease;
+  animation: fadeIn 0.6s ease;
 }
 
-@keyframes pop {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.app h1 {
-  text-align: center;
+.quiz-container h1 {
+  font-size: 20px;
   margin-bottom: 15px;
   color: #333;
 }
 
-/* Input section */
-.input-box {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.input-box input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  outline: none;
-  transition: 0.3s;
-}
-
-.input-box input:focus {
-  border-color: #667eea;
-}
-
-.input-box button {
-  padding: 10px 14px;
-  border: none;
-  border-radius: 8px;
-  background: #667eea;
-  color: #fff;
+.quiz-container input[type="radio"] {
+  margin-right: 10px;
+  margin-bottom: 20px;
   cursor: pointer;
-  transition: 0.3s;
+  transform: scale(1.2);
 }
 
-.input-box button:hover {
-  background: #5563d6;
+.quiz-container br {
+  margin-bottom: 10px;
+}
+
+.quiz-container label {
+  cursor: pointer;
+}
+
+.quiz-container input[type="radio"]:checked {
+  accent-color: #667eea;
+}
+
+.quiz-container p {
+  animation: slideUp 0.4s ease;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* Todo list */
-ul {
-  list-style: none;
+button:active {
+  transform: scale(0.98);
 }
 
-li {
-  background: #f3f4f6;
-  margin-bottom: 8px;
-  padding: 10px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  animation: slide 0.3s ease;
-}
-
-@keyframes slide {
+/* Animations */
+@keyframes fadeIn {
   from {
-    transform: translateX(-10px);
     opacity: 0;
+    transform: scale(0.9);
   }
   to {
-    transform: translateX(0);
     opacity: 1;
+    transform: scale(1);
   }
 }
 
-/* Todo text */
-.text {
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.text.add {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-/* Delete button */
-.del {
-  background: #ff4d4d;
-  border: none;
-  color: white;
-  padding: 5px 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.del:hover {
-  background: #e63b3b;
-  transform: scale(1.05);
-}
-/* Todo list item */
-li {
-  background: #f3f4f6;
-  margin-bottom: 8px;
-  padding: 10px 12px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  cursor: pointer; /* ✅ pointer */
-
-  animation: slide 0.3s ease;
-  transition: 0.3s ease; /* ✅ smooth hover */
-}
-
-/* Hover effect on list */
-li:hover {
-  background: #e8ebf0;
-  transform: translateY(-2px); /* 🔥 lift effect */
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-
-/* Active / click feel */
-li:active {
-  transform: scale(0.97);
-}
-
-/* Text animation */
-.text {
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-/* Completed todo */
-.text.add {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-/* Delete button stays normal */
-.del {
-  background: #ff4d4d;
-  border: none;
-  color: white;
-  padding: 5px 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.del:hover {
-  background: #e63b3b;
-  transform: scale(1.08);
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
