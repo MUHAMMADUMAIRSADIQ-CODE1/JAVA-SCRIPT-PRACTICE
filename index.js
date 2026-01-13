@@ -586,108 +586,531 @@
 // - button se decrease ho
 
 // number 0 se neeche na jaye
-let SelectedOpt = null;
-let isvalid = false;
-let sum = 0
-let p = document.querySelector("p");
-let btn = document.querySelector("button")
-let count = 0;
-let quiz = [
-    {
-        question: "1) JavaScript kis cheez ke liye use hoti hai?",
-        options: ["Styling", "Structure", "Logic", "Design"],
-        correct: "Logic"
-    },
-    {
-        question: "2) HTML ka full form kya hai?",
-        options: [
-            "Hyper Text Markup Language",
-            "High Text Machine Language",
-            "Hyper Tool Mark Language",
-            "Home Text Mark Language"
-        ],
-        correct: "Hyper Text Markup Language"
-    },
-    {
-        question: "3) CSS kis cheez ke liye use hoti hai?",
-        options: ["Logic", "Database", "Styling", "Server"],
-        correct: "Styling"
-    },
-    {
-        question: "4) JavaScript mein array ka index kis se start hota hai?",
-        options: ["0", "1", "-1", "2"],
-        correct: "0"
-    },
-    {
-        question: "5) DOM ka full form kya hai?",
-        options: [
-            "Document Object Model",
-            "Data Object Method",
-            "Document Oriented Model",
-            "Digital Object Model"
-        ],
-        correct: "Document Object Model"
-    },
-    {
-        question: "6) JavaScript mein function ka keyword kya hota hai?",
-        options: ["func", "function", "method", "define"],
-        correct: "function"
-    },
-    {
-        question: "7) CSS file ko HTML ke saath kaise link karte hain?",
-        options: ["<script>", "<style>", "<css>", "<link>"],
-        correct: "<link>"
-    },
-    {
-        question: "8) JavaScript mein variable declare karne ke liye kaunsa keyword use hota hai?",
-        options: ["int", "var", "string", "value"],
-        correct: "var"
-    },
-    {
-        question: "9) Kaunsa symbol JavaScript mein single-line comment ke liye use hota hai?",
-        options: ["<!-- -->", "/* */", "//", "**"],
-        correct: "//"
-    },
-    {
-        question: "10) JavaScript mein condition check karne ke liye kaunsa statement use hota hai?",
-        options: ["for", "if", "switch", "while"],
-        correct: "if"
-    }
+// let SelectedOpt = null;
+// let isvalid = false;
+// let sum = 0
+// let p = document.querySelector("p");
+// let btn = document.querySelector("button")
+// let count = 0;
+// let quiz = [
+//     {
+//         question: "1) JavaScript kis cheez ke liye use hoti hai?",
+//         options: ["Styling", "Structure", "Logic", "Design"],
+//         correct: "Logic"
+//     },
+//     {
+//         question: "2) HTML ka full form kya hai?",
+//         options: [
+//             "Hyper Text Markup Language",
+//             "High Text Machine Language",
+//             "Hyper Tool Mark Language",
+//             "Home Text Mark Language"
+//         ],
+//         correct: "Hyper Text Markup Language"
+//     },
+//     {
+//         question: "3) CSS kis cheez ke liye use hoti hai?",
+//         options: ["Logic", "Database", "Styling", "Server"],
+//         correct: "Styling"
+//     },
+//     {
+//         question: "4) JavaScript mein array ka index kis se start hota hai?",
+//         options: ["0", "1", "-1", "2"],
+//         correct: "0"
+//     },
+//     {
+//         question: "5) DOM ka full form kya hai?",
+//         options: [
+//             "Document Object Model",
+//             "Data Object Method",
+//             "Document Oriented Model",
+//             "Digital Object Model"
+//         ],
+//         correct: "Document Object Model"
+//     },
+//     {
+//         question: "6) JavaScript mein function ka keyword kya hota hai?",
+//         options: ["func", "function", "method", "define"],
+//         correct: "function"
+//     },
+//     {
+//         question: "7) CSS file ko HTML ke saath kaise link karte hain?",
+//         options: ["<script>", "<style>", "<css>", "<link>"],
+//         correct: "<link>"
+//     },
+//     {
+//         question: "8) JavaScript mein variable declare karne ke liye kaunsa keyword use hota hai?",
+//         options: ["int", "var", "string", "value"],
+//         correct: "var"
+//     },
+//     {
+//         question: "9) Kaunsa symbol JavaScript mein single-line comment ke liye use hota hai?",
+//         options: ["<!-- -->", "/* */", "//", "**"],
+//         correct: "//"
+//     },
+//     {
+//         question: "10) JavaScript mein condition check karne ke liye kaunsa statement use hota hai?",
+//         options: ["for", "if", "switch", "while"],
+//         correct: "if"
+//     }
 
-];
+// ];
 
-function update() {
-    SelectedOpt = null
-    p.innerHTML = " "
-    if (quiz.length - 1 < count) {
-        alert(`Your Score is ${sum}`)
-        alert("Quiz is completed")
-        count = 0
-        sum = 0
-    }
-    let a = quiz[count].question
-    p.innerHTML += `<h1>${a}</h1><br>`;
+// function update() {
+//     SelectedOpt = null
+//     p.innerHTML = " "
+//     if (quiz.length - 1 < count) {
+//         alert(`Your Score is ${sum}`)
+//         alert("Quiz is completed")
+//         count = 0
+//         sum = 0
+//     }
+//     let a = quiz[count].question
+//     p.innerHTML += `<h1>${a}</h1><br>`;
 
-    quiz[count].options.forEach(e => {
-        let label = document.createElement("label");
-        let input = document.createElement("input")
-        input.value = e;
-        input.type = "radio"
-        input.name = "option"
-        label.append(input, " " + e);
-        p.appendChild(label);
-        p.appendChild(document.createElement("br"))
-    });
+//     quiz[count].options.forEach(e => {
+//         let label = document.createElement("label");
+//         let input = document.createElement("input")
+//         input.value = e;
+//         input.type = "radio"
+//         input.name = "option"
+//         label.append(input, " " + e);
+//         p.appendChild(label);
+//         p.appendChild(document.createElement("br"))
+//     });
+// }
+// p.addEventListener("click", e => {
+//     SelectedOpt = e.target.value;
+// })
+// btn.addEventListener("click", () => {
+//     if (SelectedOpt === null) return alert("please choose")
+//     if (SelectedOpt === quiz[count].correct) {
+//         sum++;
+//     }
+//     count++;
+//     update();
+// })
+// update();
+
+
+// let div=document.getElementsByTagName("div")
+// console.log(div[0].getElementsByTagName("p")[1])
+
+
+
+// let a= document.querySelector("div").spellcheck
+
+
+
+// let count = 0;
+// let div = document.querySelector(".under-class")
+// let container = document.querySelector(".container")
+// let p = document.createElement("p")
+// container.appendChild(p)
+// function updateUI() {
+//     if (count <= 200) {
+//         div.style.width = `${count}px`
+//         p.innerText = `${Math.ceil((count / 200) * 100)}%`
+//         count++;
+//     }
+// }
+// setInterval(() => {
+//     updateUI();
+// }, 100);
+
+// let firstimg = document.querySelector("#first-img")
+// let secondimg = document.querySelector("#second-img")
+// let thirdimg = document.querySelector("#third-img")
+// let left = 0;
+// let a = false;
+// let c;
+//  let bgX=0
+// function carstart() {
+
+//     // left++;
+//     // firstimg.style.left = `${left}px`
+
+//     bgX -= 3; // background opposite direction
+//     document.body.style.backgroundPositionX = bgX + "px";
+
+
+// }
+
+// secondimg.addEventListener("click", () => {
+//     if (a) return;
+//     a = true
+//     c = setInterval(() => {
+//         carstart();
+//     }, 16)
+// })
+// thirdimg.addEventListener("click", () => {
+//     clearInterval(c)
+//     a = false
+// })
+
+
+// let firstimg = document.querySelector("#first-img");   // car
+// let secondimg = document.querySelector("#second-img"); // start
+// let thirdimg = document.querySelector("#third-img");  // stop
+// let backw = document.querySelector("#fifth-img");  // stop
+// let frontw = document.querySelector(".front-wheel");
+// let gameRunning = false;
+// let intervalId = null;
+// let angle = 0
+// // background position
+// let bgX = 0;
+
+// // car position
+// let carX = 200; // initial left position
+
+// // car fixed position
+// firstimg.style.left = carX + "px";
+// // background changing
+
+// let imagArr = ["https://i.pinimg.com/originals/b7/2a/36/b72a36cd7b88ba67875f4f71d8deb1a7.jpg",
+//     "https://static.vecteezy.com/system/resources/previews/008/888/451/original/horizontal-view-of-asphalt-road-with-bike-lense-background-of-trees-and-green-grass-with-puddle-and-mountain-under-the-blue-sky-vector.jpg"
+//     , "./img/Copilot_20260111_225601.png","./img/Copilot_20260111_230739.png"
+// ]
+
+
+
+// // GAME LOOP
+// function gameLoop() {
+//     // background move (road)
+//     bgX -= 4;
+//     document.body.style.backgroundPositionX = bgX + "px";
+
+//     angle += 10
+//     frontw.style.transform = `rotate(${angle}deg)`
+//     backw.style.transform = `rotate(${angle}deg)`
+// }
+
+// // START BUTTON
+// secondimg.addEventListener("click", () => {
+//     if (gameRunning) return;
+
+//     gameRunning = true;
+//     intervalId = setInterval(gameLoop, 16); 
+//     setInterval(() => {
+//         if (gameRunning) {
+//             let b = Math.round(Math.random() * 3)
+//             console.log(b)
+//             document.body.style.backgroundImage = `URL(${imagArr[b]})`
+//         }
+//     }, 5000);
+// });
+
+// // STOP BUTTON
+// thirdimg.addEventListener("click", () => {
+//     clearInterval(intervalId);
+//     gameRunning = false;
+// });
+// window.addEventListener("click", (e) => {
+//     console.log(e.x)
+//     console.log(e.y)
+//     if (e.x <= 904 && (e.y <= 110)) {
+//         if (gameRunning) return;
+
+//         gameRunning = true;
+//         intervalId = setInterval(gameLoop, 16);
+//     }
+//     if ((e.x <= 904) && (e.y > 160 && e.y <= 193)) {
+//         clearInterval(intervalId);
+//         gameRunning = false;
+//     }
+// })
+
+
+
+// function input(){
+//     let input=document.querySelector("input").value
+// var reverse = "";
+
+// //     //       civic
+//     for (let i = input.length - 1; i >= 0; i--) {
+
+//   reverse += input[i];
+// }
+// // let p=document.querySelector("p")
+// // console.log("reverse",reverse)
+
+// // p.textContent=reverse
+// console.log(reverse)
+// console.log(input)
+// input=reverse
+// console.log(input)
+// }
+
+
+
+
+
+// setInterval
+
+// red → green → yellow → red
+
+
+// // let button = document.querySelector("button")
+// // let redlight = document.querySelector(".red")
+// // let yellowlight = document.querySelector(".yellow")
+// // let greenlight = document.querySelector(".green")
+// // let car = document.querySelector("#car")
+// // let oneinterval = false;
+// // let a = [redlight, yellowlight, greenlight]
+// // let count = 0
+// // let assign = 0;
+// // let left = 0;
+// // let assignleft;
+
+// // function lightchanging() {
+// //     a[assign].classList.remove("active")
+// //     a[count].classList.add("active")
+// //     assign = count
+// //     count = (count + 1) % a.length
+// // }
+// // function lightwithcar() {
+// //     if (redlight.getAttribute("class").includes("active")) {
+// //         car.style.left = `${left}px`
+// //     }
+// //     else if (yellowlight.getAttribute("class").includes("active")) {
+// //         if (left <= window.innerWidth-75) {
+// //             left += 5;
+// //             assignleft = left
+// //             car.style.left = `${left}px`
+// //         }
+// //         else{
+// //             left=0
+// //         }
+// //     }
+// //     else if (greenlight.getAttribute("class").includes("active")) {
+// //         if (left <= window.innerWidth-75) {
+// //             left += 20;
+// //             assignleft = left
+// //             car.style.left = `${left}px`
+// //         }
+// //         else{
+// //             left=0
+// //         }
+// //     }
+// // }
+// // setInterval(() => {
+// //     lightwithcar();
+// // }, 250);
+
+// // button.addEventListener("click", () => {
+// //     if (oneinterval) return;
+// //     oneinterval = true
+// //     setInterval(() => {
+// //         lightchanging()
+
+// //     }, 5000);
+// // })
+
+
+
+
+// let button = document.querySelector("button")
+// let redlight = document.querySelector(".red")
+// let yellowlight = document.querySelector(".yellow")
+// let greenlight = document.querySelector(".green")
+// let car = document.querySelector("#car")
+// let oneinterval = false;
+// let a = [redlight, yellowlight, greenlight]
+// let count = 0
+// let assign = 0;
+// let left = 0;
+// let assignleft;
+
+// function lightchanging() {
+//     a[assign].classList.remove("active")
+//     a[count].classList.add("active")
+//     assign = count
+//     count = (count + 1) % a.length
+// }
+// window.addEventListener("keydown", (e) => {
+//     console.log(e.key)
+//     if (redlight.getAttribute("class").includes("active")) {
+//         if (e.key === "Enter") {
+//             car.style.left = `${left}px`
+//         }
+//     }
+//     else if (yellowlight.getAttribute("class").includes("active")) {
+//         if (e.key === "ArrowRight") {
+//             if (left <= window.innerWidth - 75) {
+//                 left += 5;
+//                 assignleft = left
+//                 car.style.left = `${left}px`
+//             }
+//             else {
+//                 left = 0
+//             }
+//         }
+//     }
+//     else if (greenlight.getAttribute("class").includes("active")) {
+//         if (e.key === "ArrowRight") {
+//             if (left <= window.innerWidth - 75) {
+//                 left += 20;
+//                 assignleft = left
+//                 car.style.left = `${left}px`
+//             }
+//             else {
+//                 left = 0
+//             }
+//         }
+
+//     }
+
+
+// })
+// // setInterval(() => {
+// //     lightwithcar();
+// // }, 250);
+
+// button.addEventListener("click", () => {
+//     if (oneinterval) return;
+//     oneinterval = true
+//     setInterval(() => {
+//         lightchanging()
+
+//     }, 5000);
+// })
+
+
+
+// let expensename = document.querySelector("#expense-name");
+// let expenseamount = document.querySelector("#expense-amount");
+// let button = document.querySelector("button");
+// let ul = document.querySelector("ul");
+// let span = document.querySelector("#total");
+// let h3 = document.querySelector("h3");
+// let expenses = [];
+// function expenseAdd() {
+//     let namevalue = expensename.value;
+//     let amountvalue = expenseamount.value;
+//     h3.textContent = ""
+//     if (!namevalue && !amountvalue) return h3.textContent = `Plz Enter Expense !`;
+//     if (amountvalue < 0) return h3.textContent = `Plz Enter Positive Amount !`;
+//     if (!amountvalue) return h3.textContent = `Plz Enter Amount !`;
+//     if (!namevalue || !isNaN(namevalue)) return h3.textContent = `Plz Enter Expense Name!`;
+//     expenses.push({
+//         name: namevalue,
+//         amount: Number(amountvalue)
+//     })
+//     let li = document.createElement("li");
+//     li.innerHTML = `<div>${namevalue} - Rs <h3>${amountvalue}</h3></div>
+//     <button class="Dbt">Delete</button>`;
+//     ul.appendChild(li)
+//     expensename.value = "";
+//     expenseamount.value = "";
+// }
+// function calculateTotal() {
+//     let amountStore = 0;
+//     expenses.forEach(e => amountStore += e.amount)
+//     span.textContent = amountStore
+// }
+// function deletebtn() {
+//     let dbt = document.querySelectorAll(".Dbt")
+//     dbt.forEach((item, index) => {
+//         item.addEventListener("click", (e) => {
+//             e.target.parentElement.remove()
+//             expenses.splice(index, 1)
+//             calculateTotal()
+//         })
+//     })
+// }
+
+// button.addEventListener("click", () => {
+//     expenseAdd();
+//     calculateTotal()
+//     deletebtn()
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// new hai yai
+
+
+
+let expensename = document.querySelector("#expense-name");
+let expenseamount = document.querySelector("#expense-amount");
+let button = document.querySelector("button");
+let ul = document.querySelector("ul");
+let span = document.querySelector("#total");
+let h3 = document.querySelector("h3");
+let expenses = [];
+function expenseAdd() {
+    let namevalue = expensename.value;
+    let amountvalue = expenseamount.value;
+    h3.textContent = ""
+    if (!namevalue && !amountvalue) return h3.textContent = `Plz Enter Expense !`;
+    if (amountvalue < 0) return h3.textContent = `Plz Enter Positive Amount !`;
+    if (!amountvalue) return h3.textContent = `Plz Enter Amount !`;
+    if (!namevalue || !isNaN(namevalue)) return h3.textContent = `Plz Enter Expense Name!`;
+    expenses.push({
+        name: namevalue,
+        amount: Number(amountvalue)
+    })
+    let li = document.createElement("li");
+    li.innerHTML = `<div>${namevalue} - Rs <h3>${amountvalue}</h3></div>
+    <button class="Dbt">Delete</button>`;
+    ul.appendChild(li)
+    expensename.value = "";
+    expenseamount.value = "";
 }
-p.addEventListener("click", e => {
-    SelectedOpt = e.target.value;
+function calculateTotal() {
+    let amountStore = 0;
+    expenses.forEach(e => amountStore += e.amount)
+    span.textContent = amountStore
+}
+function deletebtn() {
+    let dbt = document.querySelectorAll(".Dbt")
+
+    dbt.forEach((item, index) => {
+        if (!item.dataset.listener) {
+            item.addEventListener("click", (e) => {
+                let div = document.querySelector(".divfullpage");
+                div.style.display = "flex"
+                let btn1 = document.querySelector("#btn1")
+                let btn2 = document.querySelector("#btn2")
+                console.log(expenses)
+                btn1.addEventListener("click", () => {
+                    console.log(expenses)
+                    div.style.display = "none"
+                    e.target.parentElement.remove()
+                    console.log("1", index)
+                    expenses.splice(index, 1)
+                    calculateTotal()
+                    console.log("hs", expenses)
+                })
+                btn2.addEventListener("click", () => {
+                    div.style.display = "none"
+                })
+
+            })
+            item.dataset.listener = "true";
+        }
+    })
+}
+
+button.addEventListener("click", () => {
+    expenseAdd();
+    calculateTotal()
+    deletebtn()
 })
-btn.addEventListener("click", () => {
-    if (SelectedOpt === null) return alert("please choose")
-    if (SelectedOpt === quiz[count].correct) {
-        sum++;
-    }
-    count++;
-    update();
-})
-update();
