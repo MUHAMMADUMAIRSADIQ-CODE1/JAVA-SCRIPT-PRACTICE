@@ -465,6 +465,7 @@ li p {
   padding: 10px 20px;
   border-radius: 7px;
   background: #667eea;
+  cursor: pointer;
 }
 
 
@@ -475,6 +476,7 @@ li p {
   padding: 10px 20px;
   border-radius: 7px;
   background: #c53030;
+  cursor: pointer;
 }
 
 .flex-div {
