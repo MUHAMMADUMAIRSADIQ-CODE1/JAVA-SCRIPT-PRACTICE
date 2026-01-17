@@ -1048,69 +1048,174 @@
 
 
 
-let expensename = document.querySelector("#expense-name");
-let expenseamount = document.querySelector("#expense-amount");
-let button = document.querySelector("button");
-let ul = document.querySelector("ul");
-let span = document.querySelector("#total");
-let h3 = document.querySelector("h3");
-let expenses = [];
-function expenseAdd() {
-    let namevalue = expensename.value;
-    let amountvalue = expenseamount.value;
-    h3.textContent = ""
-    if (!namevalue && !amountvalue) return h3.textContent = `Plz Enter Expense !`;
-    if (amountvalue < 0) return h3.textContent = `Plz Enter Positive Amount !`;
-    if (!amountvalue) return h3.textContent = `Plz Enter Amount !`;
-    if (!namevalue || !isNaN(namevalue)) return h3.textContent = `Plz Enter Expense Name!`;
-    expenses.push({
-        name: namevalue,
-        amount: Number(amountvalue)
-    })
-    let li = document.createElement("li");
-    li.innerHTML = `<div>${namevalue} - Rs <h3>${amountvalue}</h3></div>
-    <button class="Dbt">Delete</button>`;
-    ul.appendChild(li)
-    expensename.value = "";
-    expenseamount.value = "";
-}
-function calculateTotal() {
-    let amountStore = 0;
-    expenses.forEach(e => amountStore += e.amount)
-    span.textContent = amountStore
-}
-function deletebtn() {
-    let dbt = document.querySelectorAll(".Dbt")
+// let expensename = document.querySelector("#expense-name");
+// let expenseamount = document.querySelector("#expense-amount");
+// let button = document.querySelector("button");
+// let ul = document.querySelector("ul");
+// let span = document.querySelector("#total");
+// let h3 = document.querySelector("h3");
+// let expenses = [];
+// function expenseAdd() {
+//     let namevalue = expensename.value;
+//     let amountvalue = expenseamount.value;
+//     h3.textContent = ""
+//     if (!namevalue && !amountvalue) return h3.textContent = `Plz Enter Expense !`;
+//     if (amountvalue < 0) return h3.textContent = `Plz Enter Positive Amount !`;
+//     if (!amountvalue) return h3.textContent = `Plz Enter Amount !`;
+//     if (!namevalue || !isNaN(namevalue)) return h3.textContent = `Plz Enter Expense Name!`;
+//     expenses.push({
+//         name: namevalue,
+//         amount: Number(amountvalue)
+//     })
+//     let li = document.createElement("li");
+//     li.innerHTML = `<div>${namevalue} - Rs <h3>${amountvalue}</h3></div>
+//     <button class="Dbt">Delete</button>`;
+//     ul.appendChild(li)
+//     expensename.value = "";
+//     expenseamount.value = "";
+// }
+// function calculateTotal() {
+//     let amountStore = 0;
+//     expenses.forEach(e => amountStore += e.amount)
+//     span.textContent = amountStore
+// }
+// function deletebtn() {
+//     let dbt = document.querySelectorAll(".Dbt")
 
-    dbt.forEach((item, index) => {
-        if (!item.dataset.listener) {
-            item.addEventListener("click", (e) => {
-                let div = document.querySelector(".divfullpage");
-                div.style.display = "flex"
-                let btn1 = document.querySelector("#btn1")
-                let btn2 = document.querySelector("#btn2")
-                console.log(expenses)
-                btn1.addEventListener("click", () => {
-                    console.log(expenses)
-                    div.style.display = "none"
-                    e.target.parentElement.remove()
-                    console.log("1", index)
-                    expenses.splice(index, 1)
-                    calculateTotal()
-                    console.log("hs", expenses)
-                })
-                btn2.addEventListener("click", () => {
-                    div.style.display = "none"
-                })
+//     dbt.forEach((item, index) => {
+//         if (!item.dataset.listener) {
+//             item.addEventListener("click", (e) => {
+//                 let div = document.querySelector(".divfullpage");
+//                 div.style.display = "flex"
+//                 let btn1 = document.querySelector("#btn1")
+//                 let btn2 = document.querySelector("#btn2")
+//                 console.log(expenses)
+//                 btn1.addEventListener("click", () => {
+//                     console.log(expenses)
+//                     div.style.display = "none"
+//                     e.target.parentElement.remove()
+//                     console.log("1", index)
+//                     expenses.splice(index, 1)
+//                     calculateTotal()
+//                     console.log("hs", expenses)
+//                 })
+//                 btn2.addEventListener("click", () => {
+//                     div.style.display = "none"
+//                 })
 
-            })
-            item.dataset.listener = "true";
-        }
-    })
-}
+//             })
+//             item.dataset.listener = "true";
+//         }
+//     })
+// }
 
-button.addEventListener("click", () => {
-    expenseAdd();
-    calculateTotal()
-    deletebtn()
-})
+// button.addEventListener("click", () => {
+//     expenseAdd();
+//     calculateTotal()
+//     deletebtn()
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+// let button = document.querySelector("button");
+
+// let tasks = [
+//     { id: 1, title: "HTML", status: "todo" },
+//     { id: 3, title: "JS", status: "doing" }
+// ];
+
+// button.addEventListener("click", (e) => {
+//     let id = e.target.closest(".task").dataset.id;
+//     let task = tasks.find(t => t.id === id);
+//     console.log(task)
+// })
+
+// let user = {
+//   name: "Ali",
+//   age: 20,
+//   greet: function () {
+//     console.log("Hello, my name is " + this.name);
+//   }
+// };
+// user.greet()
+// // delete user.greet
+
+
+
+// let user = {
+//   name: "Ali",
+//   greet: () => {
+//     console.log(this.name);
+//   }
+// };
+// user.greet()
+
+
+
+// let studentRegister={
+//     students:[],
+//     collectstudents(name,age,gender,rollNO){
+//         this.students.push({
+//            name:name, 
+//            age:age, 
+//            gender:gender,
+//            rollNO:rollNO
+//         })
+//     },
+//     findStudent(name){
+//      console.log(this.students.reduce(item=>item.name===name))
+//     }
+// }
+// studentRegister.collectstudents("umair",20,"Male",489143)
+// studentRegister.collectstudents("wejhgi",2,"feMale",48729143)
+// studentRegister.collectstudents("umair",20,"Male",489143)
+// studentRegister.findStudent("umair")
+// let students = [
+//   { name: "Ali", marks: 80 },
+//   { name: "Ahmed", marks: 65 },
+//   { name: "Sara", marks: 90 },
+//   { name: "Zain", marks: 55 }
+// ];
+
+
+// students.forEach(student => {
+//   console.log(student.name);
+// });
+
+
+// let toppers = students.forEach((student) => {if(student.marks > 70)console.log(student.name)});
+
+// let sum=0;
+// let total= students.forEach(item=>console.log(sum+=item.marks))
+// let avg=sum/students.length;
+// console.log("avg=>",avg)
+
+
+
+
+
+
+
+let fruits = ["apple", "banana", "apple", "orange", "banana"];
+
+let count = {};
+
+fruits.forEach(fruit => {
+    console.log(fruit)
+  if (count.fruit) {
+    console.log(count.fruit++);
+  } else {
+    count.fruit = 1;
+  }
+});
+
+console.log(count);
